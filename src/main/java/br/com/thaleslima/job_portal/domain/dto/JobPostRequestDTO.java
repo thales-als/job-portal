@@ -1,30 +1,20 @@
-package br.com.thaleslima.job_portal.domain.entity;
+package br.com.thaleslima.job_portal.domain.dto;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import br.com.thaleslima.job_portal.domain.enumeration.JobCategoryEnum;
 
-@Entity
-@Table(name = "TB_JOB_POSTS")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class JobPost {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
-	private UUID id;
+public class JobPostRequestDTO {
 
 	@NotNull
 	private String title;
